@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="https://fonts.cdnfonts.com/css/spoof-trial" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Lista de filmes</title>
+  </head>
+  <body>
+    <section>
+      <div id="modal-overlay" class="modal-overlay">
+        <div class="modal">
+          <form action="" id="form">
+            <div class="input-group">
+              <label for="">Título do filme:</label>
+              <input type="text" id="title" required/>
+            </div>
+            <div class="input-group resumo">
+              <label for="">Resumo:</label>
+              <textarea name="resume" id="resume" cols="60" rows="20" required></textarea>
+            </div>
+            <div class="input-group">
+              <label for="">Nota:</label>
+              <input
+                type="number"
+                placeholder="% de aprovação"
+                min="1"
+                max="100"
+                id="nota"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="">Data de lançamento:</label>
+              <input type="date" id="data" required/>
+            </div>
+            <div class="input-group">
+              <label for="">Anexe o poster do filme:</label>
+              <input type="file" id="file" accept=".jpg,.png" />
+
+            </div>
+          </form>
+          <div class="card-buttons">
+            <button class="btn btn-primary" type="submit" onclick="addFilme()">Confirmar</button>
+            <button class="btn btn-secondary"onclick="modal()">Cancelar</button>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="card-main">
+        <div class="main-content">
+          <button onclick="modal()">Adicionar filme +</button>
+          <div class="banner"></div>
+        </div>
+        <div class="resumo active">
+          <h3>Os Vingadores – The Avengers</h3>
+          <p>
+            Loki, o irmão de Thor, ganha acesso ao poder ilimitado do cubo
+            cósmico ao roubá-lo de dentro das instalações da S.H.I.E.L.D. Nick
+            Fury, o diretor desta agência internacional que mantém a paz, logo
+            reúne os únicos super-heróis que serão capazes de defender a Terra
+            de ameaças sem precedentes. Homem de Ferro, Capitão América, Hulk,
+            Thor, Viúva Negra e Gavião Arqueiro formam o time dos sonhos de
+            Fury, mas eles precisam aprender a colocar os egos de lado e agir
+            como um grupo em prol da humanidade.
+          </p>
+          <p>86% de aprovação</p>
+          <p>27 de abril de 2012</p>
+        </div>
+      </div>
+      <div class="container">
+        <div class="mini-banner">
+          <img src="./img/banner2.jpg" alt="" />
+          <a href="">Ver mais</a>
+        </div>
+        <div class="mini-banner">
+          <img src="./img/banner3.jpg" alt="" />
+          <a href="">Ver mais</a>
+        </div>
+        <div class="mini-banner">
+          <img src="./img/banner4.jpg" alt="" />
+          <a href="">Ver mais</a>
+        </div>
+        <div class="mini-banner">
+          <img src="./img/banner5.jpg" alt="" />
+          <a href="">Ver mais</a>
+        </div>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

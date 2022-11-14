@@ -1,0 +1,206 @@
+body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  background-image: url(./img/bg-img.png);
+  background-image: url(./img/bg-img2.jpg);
+  /* background-image: url(./img/bg-img3.jpg); */
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: 'Spoof Trial', sans-serif;
+  
+}
+section{
+  width: 100%;
+  
+  background: rgba(255, 255, 255, 0.27);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.6px);
+  -webkit-backdrop-filter: blur(6.6px);
+  
+}
+.modal-overlay{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal {
+  margin-top:100px;
+  padding: 2.4rem;
+
+/* From https://css.glass */
+background: rgba(255, 255, 255, 0.4);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.modal form{
+  display: flex;
+  flex-direction: column;
+}
+.input-group{
+  display: flex;
+  margin-bottom: 20px;
+}
+.input-group.resumo{
+  height:100px;
+}
+.input-group label{
+  width: 100%;
+  
+  
+}
+.input-group input{
+  padding: 5px 10px;
+  width: 100%;
+  border-radius: 5px;
+  border:none;
+}
+.card-main {
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  
+  width: 100%;
+  padding: 50px 0;
+  
+}
+.card-buttons{
+  display: flex;
+  justify-content:end;
+}
+.btn{
+  border: none;
+  padding: 10px 20px;
+  margin-left:10px;
+  border-radius:5px;
+
+
+}
+.btn-primary{
+  background: #7fef87;
+  color:#083c08;
+}
+.btn-primary:hover{
+  transition: 0.4s;
+  background: #1baf26;
+  color: #0f0;
+}
+.btn-secondary{
+  background: #f4f4f4;
+  border: solid 2px #c76464
+}
+.btn-secondary:hover{
+  transition: 0.4s;
+  /* background: #eb3434; */
+  color: red;
+  border: solid 2px red
+}
+.banner {
+  background-image: url(./img/banner1.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+  width: 330px;
+  height: 420px;
+  
+  border-radius: 15px;
+}
+.banner a {
+  display: flex;
+  justify-content: center;
+}
+.main-content button {
+  font-family: 'Spoof Trial', sans-serif;
+  margin-left:20px;
+  border: none;
+  background: transparent;
+  
+}
+.main-content button:hover {
+  color: #540d0c;
+  transition: 0.6s;
+
+}
+
+.resumo.active {
+  color: #202124;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 95%;
+  margin-left: 20px;
+}
+.resumo.active h3 {
+  padding: 0 10px;
+}
+.resumo.active p {
+  padding: 0 10px;
+  max-width:560px;
+}
+
+.container {
+  display: flex;
+  justify-content:space-around;
+  
+  width: 100%;
+  
+}
+.mini-banner {
+  display: flex;
+  justify-content:center;
+  align-items:center;
+
+}
+.mini-banner img {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  
+  width: 240px;
+  height: 340px;
+  padding:20px;
+  margin:0 20px;
+
+
+  opacity: 0.6;
+}
+.mini-banner a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  background:rgb(0 0 0 / 60%);
+  padding:10px;
+  border-radius:10px;
+
+  position:absolute;
+}
+.mini-banner img:hover{
+  opacity: 1;
+  transition: 0.8s;
+}
+.mini-banner img:hover ~ a{
+  transition: 0.8s;
+  display: none;
+}
