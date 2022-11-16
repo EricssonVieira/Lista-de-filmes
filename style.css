@@ -17,7 +17,7 @@ body {
   font-family: 'Spoof Trial', sans-serif;
   
 }
-section{
+section.main{
   width: 100%;
   
   background: rgba(255, 255, 255, 0.27);
@@ -161,16 +161,13 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .container {
-  display: flex;
-  justify-content:space-around;
   
   width: 100%;
   
 }
 .mini-banner {
   display: flex;
-  justify-content:center;
-  align-items:center;
+  align-items: center;
 
 }
 .mini-banner img {
@@ -193,14 +190,46 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   background:rgb(0 0 0 / 60%);
   padding:10px;
   border-radius:10px;
+  margin-left:118px;
 
   position:absolute;
 }
 .mini-banner img:hover{
   opacity: 1;
   transition: 0.8s;
+  cursor:pointer;
 }
 .mini-banner img:hover ~ a{
   transition: 0.8s;
   display: none;
+
 }
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide {
+text-align: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+
+  
+}
+.swiper-slide.slides{
+  display: flex;
+  width:100%;
+  justify-content:space-around;
+  text-align: center;
+}
+

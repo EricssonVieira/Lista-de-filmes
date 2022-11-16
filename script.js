@@ -5,10 +5,6 @@ function modal() {
 
 const form = document.getElementById('form')
 
-form.addEventListener('submit', e => {
-  e.preventDefault()
-})
-localStorage.clear()
 
 function addFilme() {
   const title = document.querySelector('#title')
@@ -24,7 +20,7 @@ function addFilme() {
   localStorage.setItem('title', title.value)
 
   if (file.value === '') {
-    console.log('sem arquivo')
+    localStorage.setItem('file',src='./img/semiimg.png')
   }
 
   title.value = ''
@@ -32,4 +28,36 @@ function addFilme() {
   nota.value = ''
   data.value = ''
   file.value = ''
+
+  modal();
 }
+localStorage.clear()
+
+const img = document.createElement('img')
+img.src = "./img/semimg.png"
+
+
+
+const verMais = document.createElement('a')
+const texto = document.createTextNode("Ver mais")
+verMais.appendChild(texto)
+
+const container = document.querySelector(".container")
+container.appendChild(img)
+// container.appendChild(verMais)
+container.classList.add("mini-banner")
+
+// =========================================================================
+
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

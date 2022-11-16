@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
     <link href="https://fonts.cdnfonts.com/css/spoof-trial" rel="stylesheet" />
 
     <link rel="stylesheet" href="style.css" />
     <title>Lista de filmes</title>
   </head>
   <body>
-    <section>
+    <section class="main">
       <div id="modal-overlay" class="modal-overlay">
         <div class="modal">
           <form action="" id="form">
@@ -73,26 +76,65 @@
           <p>27 de abril de 2012</p>
         </div>
       </div>
-      <div class="container">
-        <div class="mini-banner">
-          <img src="./img/banner2.jpg" alt="" />
-          <a href="">Ver mais</a>
-        </div>
-        <div class="mini-banner">
-          <img src="./img/banner3.jpg" alt="" />
-          <a href="">Ver mais</a>
-        </div>
-        <div class="mini-banner">
-          <img src="./img/banner4.jpg" alt="" />
-          <a href="">Ver mais</a>
-        </div>
-        <div class="mini-banner">
-          <img src="./img/banner5.jpg" alt="" />
-          <a href="">Ver mais</a>
-        </div>
-      </div>
-    </section>
+      <section class="swiper mySwiper">
 
+        <div class="swiper-wrapper container">
+
+          
+          <div class="swiper-slide slides ">
+            <div class="mini-banner"> 
+              <img src="./img/banner2.jpg" alt="" />
+              <a href="">Ver mais</a>
+            </div>
+            <div class="mini-banner"> 
+              <img src="./img/banner3.jpg" alt="" />
+              <a href="">Ver mais</a>
+            </div>
+            <div class="mini-banner"> 
+              <img src="./img/banner4.jpg" alt="" />
+              <a href="">Ver mais</a>
+            </div>
+          </div>
+          <div class="swiper-slide slides ">
+            <div class="mini-banner"> 
+              <img src="./img/banner5.jpg" alt="" />
+              <a href="">Ver mais</a>
+            </div>
+            <div class="mini-banner"> 
+              <img src="./img/banner1.jpg" alt="" />
+              <a href="">Ver mais</a>
+            </div>
+            <div class="mini-banner"> 
+              <img src="./img/banner3.jpg" alt="" />
+              <a href="">Ver mais</a>
+            </div>
+          </div>
+          <div class="swiper-slide slides ">
+            <div class="mini-banner"> 
+              <img src="./img/banner5.jpg" alt="" />
+              <a href="">Ver mais</a>
+            </div>
+            <div class="mini-banner"> 
+              <img src="./img/banner2.jpg" alt="" />
+              <a href="">Ver mais</a>
+            </div>
+            <div class="mini-banner"> 
+              <img src="./img/banner4.jpg" alt="" />
+              <a href="">Ver mais</a>
+            </div>
+          </div>
+
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+          </div>
+        </section>
+      </section>
+
+
+    
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
