@@ -57,79 +57,36 @@
 
       <div class="card-main">
         <div class="main-content">
-          <button onclick="modal()">Adicionar filme +</button>
           <div class="banner"></div>
         </div>
         <div class="resumo active">
-          <h3>Os Vingadores – The Avengers</h3>
-          <p>
-            Loki, o irmão de Thor, ganha acesso ao poder ilimitado do cubo
-            cósmico ao roubá-lo de dentro das instalações da S.H.I.E.L.D. Nick
-            Fury, o diretor desta agência internacional que mantém a paz, logo
-            reúne os únicos super-heróis que serão capazes de defender a Terra
-            de ameaças sem precedentes. Homem de Ferro, Capitão América, Hulk,
-            Thor, Viúva Negra e Gavião Arqueiro formam o time dos sonhos de
-            Fury, mas eles precisam aprender a colocar os egos de lado e agir
-            como um grupo em prol da humanidade.
-          </p>
-          <p>86% de aprovação</p>
-          <p>27 de abril de 2012</p>
+          <h3 id="title_movies"></h3>
+          <p id="description"></p>
+          <p id="vote_average"></p>
+          <p id="date"></p>
         </div>
+      </div>
+      <div class="card-buttons flex-end">
+        <button onclick="modal()">Adicionar filme +</button>
+        <button onclick="modal()">Edite ou exclua</button>
       </div>
       <section class="swiper mySwiper">
 
-        <div class="swiper-wrapper container">
-
-          
-          <div class="swiper-slide slides ">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slides">
             <div class="mini-banner"> 
               <img src="./img/banner2.jpg" alt="" />
               <a href="">Ver mais</a>
             </div>
-            <div class="mini-banner"> 
-              <img src="./img/banner3.jpg" alt="" />
-              <a href="">Ver mais</a>
-            </div>
-            <div class="mini-banner"> 
-              <img src="./img/banner4.jpg" alt="" />
-              <a href="">Ver mais</a>
-            </div>
           </div>
-          <div class="swiper-slide slides ">
-            <div class="mini-banner"> 
-              <img src="./img/banner5.jpg" alt="" />
-              <a href="">Ver mais</a>
-            </div>
-            <div class="mini-banner"> 
-              <img src="./img/banner1.jpg" alt="" />
-              <a href="">Ver mais</a>
-            </div>
-            <div class="mini-banner"> 
-              <img src="./img/banner3.jpg" alt="" />
-              <a href="">Ver mais</a>
-            </div>
           </div>
-          <div class="swiper-slide slides ">
-            <div class="mini-banner"> 
-              <img src="./img/banner5.jpg" alt="" />
-              <a href="">Ver mais</a>
-            </div>
-            <div class="mini-banner"> 
-              <img src="./img/banner2.jpg" alt="" />
-              <a href="">Ver mais</a>
-            </div>
-            <div class="mini-banner"> 
-              <img src="./img/banner4.jpg" alt="" />
-              <a href="">Ver mais</a>
-            </div>
-          </div>
-
-          </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-pagination"></div>
-          </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
         </section>
+        <footer>
+          <p>Desevolvido por Erick &copy;2022</p>
+        </footer>
       </section>
 
 

@@ -4,8 +4,7 @@ body {
   flex-direction: column;
 
   background-image: url(./img/bg-img.png);
-  background-image: url(./img/bg-img2.jpg);
-  /* background-image: url(./img/bg-img3.jpg); */
+  /* background-image: url(./img/bg-img2.jpg); */
   background-position:center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -89,6 +88,23 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content:end;
 }
+.flex-end{
+  display: flex;
+  justify-content:flex-end;
+  padding-right:15px;
+}
+.flex-end button {
+  font-family: 'Spoof Trial', sans-serif;
+  margin-left:20px;
+  border: none;
+  background: transparent;
+  
+}
+.flex-end button:hover {
+  color: #540d0c;
+  transition: 0.6s;
+
+}
 .btn{
   border: none;
   padding: 10px 20px;
@@ -117,7 +133,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   border: solid 2px red
 }
 .banner {
-  background-image: url(./img/banner1.jpg);
+  /* background-image: url(https://image.tmdb.org/t/p/w500/3bhkrj58Vtu7enYsRolD1fZdja1.jpg); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -131,17 +147,10 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: center;
 }
-.main-content button {
-  font-family: 'Spoof Trial', sans-serif;
-  margin-left:20px;
-  border: none;
-  background: transparent;
-  
-}
-.main-content button:hover {
-  color: #540d0c;
-  transition: 0.6s;
-
+.main-content {
+  display: flex;
+  justify-content:space-between;
+  flex-direction: column;
 }
 
 .resumo.active {
@@ -158,12 +167,6 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 .resumo.active p {
   padding: 0 10px;
   max-width:560px;
-}
-
-.container {
-  
-  width: 100%;
-  
 }
 .mini-banner {
   display: flex;
@@ -209,6 +212,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   width: 100%;
   height: 100%;
 }
+
 .swiper-slide {
 text-align: center;
   /* Center slide text vertically */
@@ -224,12 +228,21 @@ text-align: center;
   -webkit-align-items: center;
   align-items: center;
 
-  
 }
 .swiper-slide.slides{
   display: flex;
   width:100%;
-  justify-content:space-around;
+  justify-content:center;
+  text-align: center;
+}
+
+.swiper-wrapper{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+footer{
   text-align: center;
 }
 
