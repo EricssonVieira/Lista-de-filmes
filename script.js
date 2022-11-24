@@ -3,7 +3,7 @@ const title_movies = document.querySelector('#title_movies')
 const vote_average = document.querySelector('#vote_average')
 const date = document.querySelector('#date')
 const banner = document.querySelector('.banner')
-const swiper_wrapper = document.querySelector('.swiper-wrapper')
+const carrosel = document.querySelector('.carrosel')
 
 const getMovies = async movie => {
   const apiMoviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=cb7052f34586626bf335bdee04865a56`
@@ -31,7 +31,7 @@ const showMovies = async movie => {
   date.innerText = topRated.map(movies => movies.release_date)[indexMovie]
   banner.style.backgroundImage = `url(${url})`
 }
-showMovies(2)
+showMovies(10)
 
 // ====================================================================================
 
@@ -88,53 +88,38 @@ function updateUI() {
 
 // ---------------------------------- AINDA PRECISO ARRUMAR ISSO --------------------------------
 
-// const showMoviess = async () => {
-//   const apiMoviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=cb7052f34586626bf335bdee04865a56`
+const showMoviess = async () => {
+  const apiMoviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=cb7052f34586626bf335bdee04865a56`
 
-//   const res = await fetch(apiMoviesURL)
-//   const data = await res.json()
-//   const topRated = data.results
-//   const cont = topRated.length
+  const res = await fetch(apiMoviesURL)
+  const data = await res.json()
+  const topRated = data.results
+  const cont = topRated.length
 
-//   for (i = 0; i < cont; i++) {
-//     const path = topRated.map(movies => movies.poster_path)[i]
-//     const url = `https://image.tmdb.org/t/p/w500${path}`
+  for (i = 0; i < cont; i++) {
+    const path = topRated.map(movies => movies.poster_path)[i]
+    const url = `https://image.tmdb.org/t/p/w500${path}`
 
-//     const divExt = document.createElement('div')
-//     const divInt = document.createElement('div')
-//     const img = document.createElement('img')
-//     const link = document.createElement('a')
+    const div = document.createElement('div')
+    const img = document.createElement('img')
+    const link = document.createElement('a')
 
-//     img.setAttribute('src', url)
+    img.setAttribute('src', url)
 
-//     link.textContent = "Ver mais"
+    link.textContent = "Ver mais"
     
-//     divInt.appendChild(img)
-//     divInt.appendChild(link)
-//     divInt.classList.add('mini-banner')
+    div.appendChild(img)
+    div.appendChild(link)
+    div.classList.add('mini-banner')
     
-    // divExt.classList.add('swiper-slide', 'slides')
-    // divExt.appendChild(divInt)
-
-//     swiper_wrapper.appendChild(divExt)
-//   }
-// }
-// showMoviess()
+    carrosel.appendChild(div)
+  }
+}
+showMoviess()
 
 // =========================================================================
 
-const swiper = new Swiper('.mySwiper', {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
-  }
-})
+
 // =========================================================================
 
 //
