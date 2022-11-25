@@ -40,7 +40,7 @@ body {
   box-sizing: border-box;
 
   font-family: 'Spoof Trial', sans-serif;
-  
+  scroll-behavior: smooth;
 }
 section.main{
   width: 100%;
@@ -215,8 +215,8 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   
   width: 240px;
   height: 340px;
-  padding:20px;
-  margin:0 20px;
+  padding:20px 40px;
+  margin:0 ;
 
 
   opacity: 0.7;
@@ -233,6 +233,11 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   overflow: auto;
   position:absolute;
 }
+/* .mini-banner a:last-child {
+  width:100%;
+  height: 100%;
+  background:transparent;
+} */
 .mini-banner img:hover{
   opacity: 1;
   transition: 0.9s;
