@@ -48,14 +48,33 @@
             </div>
           </form>
           <div class="card-buttons">
-            <button class="btn btn-primary" type="submit" onclick="addFilme()">Confirmar</button>
             <button class="btn btn-secondary"onclick="modal()">Cancelar</button>
+            <button class="btn btn-primary" type="submit" onclick="addFilme()">Confirmar</button>
 
           </div>
         </div>
       </div>
 
+      <!-- =========================================================================== -->
+
+      <div id="modal-overlay-list" class="modal-overlay">
+        <div class="list_movies modal">
+          <div class="list"></div>
+          
+          <div class="card-buttons">
+            <button class="btn btn-secondary"onclick="listModal()">Cancelar</button>
+            <button class="btn btn-primary" type="submit" onclick="addFilme()">Confirmar</button>
+          </div>
+    
+        </div>
+      </div>
+
+      <!-- ================================================================================== -->
+  
       <div class="card-main" id="card_main">
+        <div class="text-main">
+          <h1>Fique por dentro dos </br> principais lançamentos </br> de filmes nesse semestre!!</h1>
+        </div>
         <div class="main-content">
           <div class="banner"></div>
         </div>
@@ -71,7 +90,7 @@
         
         <div class="flex-end">
           <button onclick="modal()">Adicionar filme +</button>
-          <button onclick="modal()">Edite ou exclua</button>
+          <button onclick="listModal()">Edite ou exclua</button>
         </div>
       </div>
       <section class="swiper mySwiper">
