@@ -20,11 +20,11 @@
           <form action="" id="form">
             <div class="input-group">
               <label for="">Título do filme:</label>
-              <input type="text" id="title" required/>
+              <input type="text" id="title" placeholder="Insira a nome do filme" required/>
             </div>
             <div class="input-group resumo">
               <label for="">Resumo:</label>
-              <textarea name="resume" id="resume" cols="60" rows="20" required></textarea>
+              <textarea name="resume" id="resume" cols="60" rows="20" placeholder="Insira a sinopse do filme" required></textarea>
             </div>
             <div class="input-group">
               <label for="">Nota:</label>
@@ -59,11 +59,14 @@
 
       <div id="modal-overlay-list" class="modal-overlay">
         <div class="list_movies modal">
+          <div class="btn">
+            <button class="btn editar">Editar ou Excluir</button>
+          </div>
           <div class="list"></div>
           
           <div class="card-buttons">
             <button class="btn btn-secondary"onclick="listModal()">Cancelar</button>
-            <button class="btn btn-primary" type="submit" onclick="addFilme()">Confirmar</button>
+            <button class="btn btn-primary" type="submit" onclick="listModal()">Confirmar</button>
           </div>
     
         </div>
@@ -74,6 +77,7 @@
       <div class="card-main" id="card_main">
         <div class="text-main">
           <h1>Fique por dentro dos </br> principais lançamentos </br> de filmes nesse semestre!!</h1>
+          <!-- <img src="../img/botao-x.png"></img> -->
         </div>
         <div class="main-content">
           <div class="banner"></div>
@@ -90,7 +94,7 @@
         
         <div class="flex-end">
           <button onclick="modal()">Adicionar filme +</button>
-          <button onclick="listModal()">Edite ou exclua</button>
+          <button onclick="listModal()">Lista dos filmes</button>
         </div>
       </div>
       <section class="swiper mySwiper">

@@ -30,7 +30,7 @@ body {
   flex-direction: column;
 
   background-image: url(./img/bg-img.png);
-  /* background-image: url(./img/bg-img2.jpg); */
+  background-image: url(./img/bg-img2.jpg);
   background-position:center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -60,27 +60,73 @@ section.main{
   margin:10px 0;
   padding:5px;
   border-left:2px solid #202124;
+  display:flex;
+  justify-content:space-between;
 }
 .lista p:hover {
   background: #f9f9f938;
   cursor:pointer;
-  transition: 0.6s;
+  transition: 0.7s;
   color: #112b78;
 }
+
+.btn-excluir,.btn-editar{
+  width:15px; 
+  height:15px;
+}
+.btn-excluir:active{
+  transform: scale(0.8)
+}
+.btn-editar:active{
+  transform: scale(0.8)
+} 
+.btn.editar:active{
+  transform: scale(0.8)
+}
+.btn-primary:active{
+  transform: scale(0.8)
+
+}
+
+.btn-secondary:active {
+  transform: scale(0.8)
+
+}
+.editor{
+  display: none;
+}
+.editor.active{
+  display: flex;
+  gap:3px;
+}
+.btn.editar {
+  border: none;
+  padding: 10px 20px;
+  text-align: right;
+  color:#112b78;
+  background:transparent;
+}
+.btn.editar:hover {
+  cursor:pointer;
+  color:#112b78;
+  background:#ffffff38;
+  transition: 0.7s;
+  
+}
+
 
 .modal-overlay{
 width: 100%;
 height: 100%;
 background-color: rgba(0, 0, 0, 0.7);
 position: fixed;
-top: -0;
+top: 0;
 left: 0;
 display: flex;
 align-items: start;
 justify-content: center;
 opacity: 0;
 visibility: hidden;
-padding-bottom:70px;
 z-index:100
 }
 .modal-overlay{
@@ -100,16 +146,15 @@ z-index:100
   visibility: visible;
 }
 .modal {
-  margin-top:50px;
-  padding: 2.4rem;
+  margin-top:20px;
+  padding: 15px;
 
-/* From https://css.glass */
-background: rgba(255, 255, 255, 0.4);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(5px);
--webkit-backdrop-filter: blur(5px);
-border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 .modal form{
   display: flex;
@@ -171,13 +216,13 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   transition: 0.6s;
 
 }
-.btn{
+.btn {
   border: none;
   padding: 10px 20px;
   margin-left:10px;
   border-radius:5px;
-
-
+  cursor:pointer;
+  text-align:right;
 }
 .btn-primary{
   background: #7fef87;
@@ -202,7 +247,7 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   font-size:42px;
 }
 .banner {
-  background-image: url(./img/banner7.jpg);
+  background-image: url(./img/banner2.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -270,11 +315,6 @@ border: 1px solid rgba(255, 255, 255, 0.3);
   overflow: auto;
   position:absolute;
 }
-/* .mini-banner a:last-child {
-  width:100%;
-  height: 100%;
-  background:transparent;
-} */
 .mini-banner img:hover{
   opacity: 1;
   transition: 0.9s;
@@ -286,13 +326,6 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 
 }
 
-.swiper {
-  width: 100%;
-  height: 100%;
-}
-
-
-
 .carrosel{
   overflow-x: scroll;
   display: flex;
@@ -301,5 +334,6 @@ border: 1px solid rgba(255, 255, 255, 0.3);
 }
 footer{
   text-align: center;
+  min-height:80px;
 }
 
