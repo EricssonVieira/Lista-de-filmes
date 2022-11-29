@@ -11,7 +11,6 @@ const li = document.getElementById('carrosel_ID')
 const qtd = localStorage.length
 const movies = localStorage.getItem('movies') || []
 
-
 voltarTopo = () => {
   window.scrollTo({
     top: 0,
@@ -35,12 +34,11 @@ li.addEventListener('click', function (event) {
   const target = event.target
   const index = target.className
 
-  for ( let i = 0; i < qtd; i++ ) {
+  for (let i = 0; i < qtd; i++) {
+    let key = localStorage.key(i)
+    let valor = JSON.parse(localStorage.getItem(key))
 
-    let key = localStorage.key(i);
-    let valor = JSON.parse(localStorage.getItem(key));
-
-    if(index == valor.id){
+    if (index == valor.id) {
       title_movies.innerText = valor.title
       description.innerText = valor.resume
       vote_average.innerText = valor.nota * 10 + '% approval'
@@ -52,10 +50,9 @@ li.addEventListener('click', function (event) {
       banner.style.height = '420px'
       text_main.style.display = 'none'
       resumo.style.display = 'block'
-      
     }
   }
-  voltarTopo();
+  voltarTopo()
 })
 
 // =========================================================================
@@ -63,19 +60,23 @@ li.addEventListener('click', function (event) {
 modal = () => {
   var element = document.getElementById('modal-overlay')
   element.classList.toggle('active')
-  voltarTopo();
+  voltarTopo()
 }
 // ======================================================================
 listModal = () => {
   var element = document.getElementById('modal-overlay-list')
   element.classList.toggle('active')
-  
-  voltarTopo();
+
+  voltarTopo()
 }
 // ======================================================================
 contar = () => {
-
   return localStorage.length
+}
+// ======================================================================
+confirmar = () => {
+  window.location.reload();
+  listModal();
 }
 // ======================================================================
 addFilme = () => {
@@ -85,7 +86,7 @@ addFilme = () => {
   const nota = document.querySelector('#nota')
   const data = document.querySelector('#data')
   const file = document.querySelector('#file')
-  
+
   const teste = localStorage.setItem(
     title.value,
     JSON.stringify({
@@ -96,15 +97,13 @@ addFilme = () => {
       file: file.value,
       id: contar()
     })
-    )
-    movies.push(teste)
-    
-    modal()
-    window.location.reload()
+  )
+  movies.push(teste)
+
+  modal()
+  window.location.reload()
 }
 // ======================================================================
-  
-
 
 // Ao descomentar essa funçao, ela preenche o localStorage com filmes
 // vindo da api TMDB
@@ -146,11 +145,10 @@ addFilme = () => {
 // essa funçao serve pra mostrar todos os mini banner vindo da api
 
 const catalogo = async () => {
+  for (let i = 0; i < qtd; i++) {
+    let key = localStorage.key(i)
+    let valor = JSON.parse(localStorage.getItem(key))
 
-  for ( let i = 0; i < qtd; i++ ) {
-    let key = localStorage.key(i);
-    let valor = JSON.parse(localStorage.getItem(key));
-  
     const url = valor.file
     const id = valor.id
 
@@ -205,6 +203,30 @@ getItens()
 
 const btnEditar = document.querySelector('.editar')
 const element = document.querySelectorAll('.editor')
+
 element.forEach(element => {
   btnEditar.addEventListener('click', () => element.classList.toggle('active'))
 })
+
+// ===========================================================================
+
+const btnExcluir = document.querySelectorAll('.btn-excluir')
+const lista = document.querySelector('.list')
+
+btnExcluir.forEach(btnExcluir => {
+  btnExcluir.addEventListener('click', event => {
+    const el = event.path[2]
+    const titulo = el.textContent
+
+    const keys = Object.keys(localStorage)
+    for (let i = 0; i < qtd; i++) {
+      if (titulo == keys[i]) {
+        localStorage.removeItem(titulo)
+        let pai = el.parentNode
+        pai.removeChild(el)
+      }
+
+    }
+  })
+})
+

@@ -43,6 +43,7 @@
     grid-template-columns: 1fr;
     overflow-y: scroll;
     max-height:380px;
+    
   }
   .flex-end{
     justify-content:space-between ;  

@@ -67,9 +67,10 @@ section.main{
   font-size:1rem;
 }
 .lista p:hover {
+  border-left:2px solid #112b78;
   background: #f9f9f938;
   cursor:pointer;
-  transition: 0.7s;
+  transition: 0.6s;
   color: #112b78;
 }
 
