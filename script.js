@@ -4,6 +4,7 @@ const vote_average = document.querySelector('#vote_average')
 const date = document.querySelector('#date')
 const banner = document.querySelector('.banner')
 const text_main = document.querySelector('.text-main')
+const resumo = document.querySelector('.active')
 const carrosel = document.querySelector('.carrosel')
 const carrosel_ID = document.getElementById('carrosel')
 const li = document.getElementById('carrosel_ID')
@@ -42,7 +43,7 @@ li.addEventListener('click', function (event) {
     if(index == valor.id){
       title_movies.innerText = valor.title
       description.innerText = valor.resume
-      vote_average.innerText = valor.nota
+      vote_average.innerText = valor.nota * 10 + '% approval'
       date.innerText = valor.data
       let url = valor.file
 
@@ -50,7 +51,8 @@ li.addEventListener('click', function (event) {
       banner.style.width = '330px'
       banner.style.height = '420px'
       text_main.style.display = 'none'
-
+      resumo.style.display = 'block'
+      
     }
   }
   voltarTopo();
