@@ -1,0 +1,30 @@
+@media screen and (max-width: 768px) {
+
+  .list_movies.modal{
+    margin: 0 auto;
+    max-height: auto;
+  }
+  .list{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow-y: scroll;
+    max-height:380px;
+  }
+  .modal{
+    max-width:425px;
+  }
+  .banner{
+    height:380px;
+  }
+  .resumo.active{
+    display:none;
+  }
+  .text-main{
+    margin-left: 1.2rem;
+  }
+  .flex-end{
+    padding:0.7rem;
+  }
+
+  
+}

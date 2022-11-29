@@ -56,7 +56,7 @@ section.main{
 .lista{
   display: grid;
   grid-template-columns: 20rem 20rem 20rem;
-  padding: 2rem;
+  padding: 1rem;
 }
 .lista p {
   margin:0.8rem 0;

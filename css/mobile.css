@@ -2,28 +2,47 @@
 
   body, html {
     background-size: contain;
+    font-size:0.8rem;
+
   }
 
-  .main-content {
+  .main-content, .resumo.active {
     display:none;
 
   }
-  .resumo.active{
-    display:none;
-
+  #title_movies{
+    font-size:1.5rem;
   }
   .card-main {
     margin:0;
   }
+  .input-group{
+    flex-direction:column;
+    
+  }
+  .input-group input{
+    width: 100%;
+    padding:0.4rem;
+  }
+  .input-group label{
+    width: 100%;
+    padding:0.4rem;
+    margin-bottom:0.5rem;
+    font-size:1rem;
+  }
   .modal{
-    max-width: 300px;
+    min-width: 280px;
     margin: 1.2rem auto;
+  }
+  .list_movies.modal{
+    margin: 0 auto;
+    max-height: auto;
   }
   .list{
     display: grid;
     grid-template-columns: 1fr;
     overflow-y: scroll;
-    max-height:400px
+    max-height:380px;
   }
   .flex-end{
     justify-content:space-between ;  
