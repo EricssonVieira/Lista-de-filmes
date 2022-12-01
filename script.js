@@ -87,60 +87,64 @@ addFilme = () => {
   const data = document.querySelector('#data')
   const file = document.querySelector('#file')
 
-  const teste = localStorage.setItem(
+  const arquivo = file.value
+   const url = arquivo.replace(`C:\\fakepath\\`, './img/');
+  
+  const registro = localStorage.setItem(
     title.value,
     JSON.stringify({
       title: title.value,
       resume: resume.value,
       nota: nota.value,
       data: data.value,
-      file: file.value,
+      file: url,
       id: contar()
     })
-  )
-  movies.push(teste)
-
-  modal()
-  window.location.reload()
-}
+    )
+    movies.push(registro)
+    
+    modal()
+    window.location.reload()
+  }
+  
 // ======================================================================
 
 // Ao descomentar essa funçao, ela preenche o localStorage com filmes
 // vindo da api TMDB
 
-// const apiMovies = async () => {
-//   const apiMoviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=cb7052f34586626bf335bdee04865a56`
+const apiMovies = async () => {
+  const apiMoviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=cb7052f34586626bf335bdee04865a56`
 
-//   const res = await fetch(apiMoviesURL)
-//   const data = await res.json()
-//   const topRated = data.results
-//   const qtd = 18
+  const res = await fetch(apiMoviesURL)
+  const data = await res.json()
+  const topRated = data.results
+  const qtd = 18
 
-//   for (i = 0; i < qtd; i++) {
-//     const id = topRated.map(movies => movies.id)[i]
-//     const title = topRated.map(movies => movies.title)[i]
-//     const release_date = topRated.map(movies => movies.release_date)[i]
-//     const vote_average = topRated.map(movies => movies.vote_average)[i]
-//     const resume = topRated.map(movies => movies.overview)[i]
-//     const path = topRated.map(movies => movies.poster_path)[i]
-//     const url = `https://image.tmdb.org/t/p/w500${path}`
+  for (i = 0; i < qtd; i++) {
+    const id = topRated.map(movies => movies.id)[i]
+    const title = topRated.map(movies => movies.title)[i]
+    const release_date = topRated.map(movies => movies.release_date)[i]
+    const vote_average = topRated.map(movies => movies.vote_average)[i]
+    const resume = topRated.map(movies => movies.overview)[i]
+    const path = topRated.map(movies => movies.poster_path)[i]
+    const url = `https://image.tmdb.org/t/p/w500${path}`
 
-//     const movie = localStorage.setItem(
-//       title,
-//       JSON.stringify({
-//         resume: resume,
-//         nota: vote_average,
-//         data: release_date,
-//         file: url,
-//         title: title,
-//         id: id
-//       })
-//     )
-//     movies.push(movie)
-//   }
-// }
+    const movie = localStorage.setItem(
+      title,
+      JSON.stringify({
+        resume: resume,
+        nota: vote_average,
+        data: release_date,
+        file: url,
+        title: title,
+        id: id
+      })
+    )
+    movies.push(movie)
+  }
+}
 
-// apiMovies()
+apiMovies()
 
 // essa funçao serve pra mostrar todos os mini banner vindo da api
 
@@ -157,6 +161,7 @@ const catalogo = async () => {
     const link = document.createElement('a')
 
     img.setAttribute('src', url)
+    // console.log(typeof url)
 
     link.textContent = 'Ver mais'
 

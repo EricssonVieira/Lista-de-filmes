@@ -16,18 +16,12 @@
   .card-main {
     margin:0;
   }
-  .input-group{
-    flex-direction:column;
-    
-  }
+  
   .input-group input{
-    width: 100%;
     padding:0.4rem;
   }
   .input-group label{
-    width: 100%;
     padding:0.4rem;
-    margin-bottom:0.5rem;
     font-size:1rem;
   }
   .modal{
@@ -43,7 +37,7 @@
     grid-template-columns: 1fr;
     overflow-y: scroll;
     max-height:380px;
-    
+
   }
   .flex-end{
     justify-content:space-between ;  

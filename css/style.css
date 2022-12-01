@@ -153,19 +153,21 @@ section.main{
 }
 .input-group{
   display: flex;
+  flex-direction: column;
   margin-bottom: 1.2rem;
 }
 .input-group.resumo{
   height:100px;
 }
 .input-group label{
-  width: 70%;
-  
+  width: 100%;
+  margin-bottom:0.5rem;
+  font-size:1rem;
   
 }
 .input-group input{
   padding: 5px 0.7rem;
-  width: 130%;
+  width: 95%;
   border:none;
 }
 .card-main {
@@ -325,7 +327,9 @@ section.main{
   width: 100%;
 }
 footer{
-  text-align: center;
+  display: flex;
+  justify-content:center;
+  align-items: center;
   min-height:80px;
   font-size:1rem;
 }
