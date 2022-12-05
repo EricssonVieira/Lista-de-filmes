@@ -11,12 +11,14 @@ const li = document.getElementById('carrosel_ID')
 const qtd = localStorage.length
 const movies = localStorage.getItem('movies') || []
 
+
 voltarTopo = () => {
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
   })
 }
+// ====================================================================================
 
 const getMovies = async movie => {
   const apiMoviesURL = `https://api.themoviedb.org/3/discover/movie?api_key=cb7052f34586626bf335bdee04865a56`
@@ -28,7 +30,6 @@ const getMovies = async movie => {
 
 // ====================================================================================
 
-// essa serve pra achar o id do filme
 
 li.addEventListener('click', function (event) {
   const target = event.target
@@ -146,7 +147,6 @@ const apiMovies = async () => {
 
 apiMovies()
 
-// essa funçao serve pra mostrar todos os mini banner vindo da api
 
 const catalogo = async () => {
   for (let i = 0; i < qtd; i++) {
@@ -161,7 +161,6 @@ const catalogo = async () => {
     const link = document.createElement('a')
 
     img.setAttribute('src', url)
-    // console.log(typeof url)
 
     link.textContent = 'Ver mais'
 
@@ -185,25 +184,20 @@ getItens = () => {
   for (const key of keys) {
     const filme = document.createElement('p')
     const div = document.createElement('div')
-    const btnEditar = document.createElement('img')
-    btnEditar.setAttribute('src', '../img/botao-editar.png')
     const btnExcluir = document.createElement('img')
     btnExcluir.setAttribute('src', '../img/botao-x.png')
 
     filme.innerText = key
 
     btnExcluir.classList.add('btn-excluir')
-    btnEditar.classList.add('btn-editar')
     div.classList.add('editor')
 
     filme.appendChild(div)
     list.appendChild(filme)
-    div.appendChild(btnEditar)
     div.appendChild(btnExcluir)
     list.classList.add('lista')
   }
 }
-
 getItens()
 
 const btnEditar = document.querySelector('.editar')
@@ -217,13 +211,13 @@ element.forEach(element => {
 
 const btnExcluir = document.querySelectorAll('.btn-excluir')
 const lista = document.querySelector('.list')
+const keys = Object.keys(localStorage)
 
 btnExcluir.forEach(btnExcluir => {
   btnExcluir.addEventListener('click', event => {
     const el = event.path[2]
     const titulo = el.textContent
 
-    const keys = Object.keys(localStorage)
     for (let i = 0; i < qtd; i++) {
       if (titulo == keys[i]) {
         localStorage.removeItem(titulo)
